@@ -17,7 +17,7 @@ namespace SchoolClassManagmentProject.Models.Entities
         public Student()
         {
             _lastName = _firstName = _email = _phone = string.Empty;
-            _grade = 0;
+            _grade = byte.MaxValue;
             _gradeLetter = 'z';
             _birthDate = new DateTime();
             _gender = false;
@@ -32,7 +32,7 @@ namespace SchoolClassManagmentProject.Models.Entities
             _birthDate = birthDate;
             _gender = gender;
 
-            _grade = 0;
+            _grade = byte.MaxValue;
             _gradeLetter = 'z';
 
         }
@@ -46,7 +46,7 @@ namespace SchoolClassManagmentProject.Models.Entities
             _birthDate = birthDate;
             _gender = gender;
 
-            _grade = 0;
+            _grade = byte.MaxValue;
             _gradeLetter = 'z';
 
         }
@@ -70,7 +70,7 @@ namespace SchoolClassManagmentProject.Models.Entities
         public bool HasEmail => !string.IsNullOrEmpty(_email);
         public bool HasPhone => !string.IsNullOrEmpty(_phone);
 
-        public bool HasSchoolClass => _grade != 0 && _gradeLetter != 'z';
+        public bool HasSchoolClass => _grade != byte.MaxValue && _gradeLetter != 'z';
 
         public void SetEmail(string newEmail)
         {
@@ -108,7 +108,7 @@ namespace SchoolClassManagmentProject.Models.Entities
 
         public void RemoveFromSchoolClass(byte grade, char gradeLetter)
         {
-            _grade = 0;
+            _grade = byte.MaxValue;
             _gradeLetter = 'z';
         }
 

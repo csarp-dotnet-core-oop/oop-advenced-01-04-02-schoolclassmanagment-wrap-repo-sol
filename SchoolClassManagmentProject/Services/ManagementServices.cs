@@ -1,4 +1,5 @@
-﻿using SchoolClassManagmentProject.Models.AppExceptions;
+﻿using SchoolClassManagmentProject.Models;
+using SchoolClassManagmentProject.Models.AppExceptions;
 using SchoolClassManagmentProject.Models.Entities;
 using SchoolClassManagmentProject.Repos;
 
@@ -67,5 +68,24 @@ namespace SchoolClassManagmentProject.Services
             return _wrapRepo.StudentRepo.SearchStudent(firstName, lastName);
         }
 
+        public int GetNumberofWomanInSchoolClass(byte grade, char gradeLetter)
+        {
+            return 0;
+        }
+
+        public Dictionary<string, int> GetNumberofGender(byte grade, char gradeLetter)
+        {
+            return new Dictionary<string, int>();
+        }
+
+        public Dictionary<SchoolClassId, int> GetNumberInSchoolClass(string grade, char gradeLetter)
+        {
+            return new Dictionary<SchoolClassId, int>();
+        }
+
+        public Dictionary<SchoolClassId, List<Student>> GetStudentByClass(string grade, char gradeLetter)
+        {
+            return new Dictionary<SchoolClassId, List<>();
+        }
     }
 }
